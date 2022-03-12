@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useBlogs } from "../../context/blogContext";
 import { v4 as uuidv4 } from "uuid";
 
@@ -15,10 +15,15 @@ export default function Create() {
       type: "ADD_BLOG",
       payload: { name, author, id: new Date().getTime(), content, liked: false }
     });
+
     setAuthor("");
     setName("");
     setContent("");
   };
+
+  useEffect(() => {
+    console.log(blogs);
+  }, [blogs]);
 
   return (
     <div>
