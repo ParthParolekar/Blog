@@ -4,15 +4,17 @@ import Blog from "../Blog/Blog";
 export default function Blogs() {
   const [{ blogs }] = useBlogs();
   return (
-    <>
-      {blogs.map((blog) => (
+    <div className="bloglist flex-row align-center justify-center">
+      {blogs.map(({ id, name, author, content, liked }) => (
         <Blog
-          key={blog.id}
-          name={blog.name}
-          author={blog.author}
-          id={blog.id}
+          key={id}
+          name={name}
+          author={author}
+          id={id}
+          content={content}
+          liked={liked}
         />
       ))}
-    </>
+    </div>
   );
 }

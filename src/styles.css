@@ -14,3 +14,8 @@ body {
   background-color: var(--secondary);
   color: var(--white);
 }
+
+.App {
+  width: 90vw;
+  margin: 0 auto;
+}
